@@ -1,0 +1,11 @@
+1. Se le tiene que poder pasar los integrantes de cada bando, sin tener que especificar la cantidad total de antemano.
+
+2. A cada integrante se le ingresa su puntaje de iniciativa (de [1 a 5]) inmediatamente luego de escribirlo.
+
+3. Se tiene que poder listar los integrantes de cada bando.
+
+4. Se tiene que poder eliminar dinámicamente integrantes a medida que mueren.
+
+5. Se tienen que poder editar integrantes de ambos bandos.
+
+6. Se tiene que poder exportar e importar integrantes por medio de un csv
