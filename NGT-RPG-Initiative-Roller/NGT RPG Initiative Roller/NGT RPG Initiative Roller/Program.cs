@@ -27,115 +27,14 @@ namespace NGT_RPG_Initiative_Roller
                     break;
 
                 case 2:
+                    //TO DO!
                     Console.WriteLine("Will now import a csv file with a previously exported sides table");
                     break;
             }
 
             //test
-            MainScreenClass.PrintPlayerSide();
-            Console.WriteLine("");
-            MainScreenClass.PrintEnemySide();
+            MainScreenClass.PrintSides();
 
-        }
-    }
-
-    class PlayerListClass
-    {
-        public static List<EntityClass> ls = new List<EntityClass>();
-    }
-
-    class EnemyListClass
-    {
-        public static List<EntityClass> ls = new List<EntityClass>();
-    }
-
-    class EntityClass
-    {
-        public string Name { get; set; }
-        public int Initiative { get; set; }
-
-        public static void AddPlayerSide()
-        {
-            Console.WriteLine("Will now enter the player characters");
-            Console.WriteLine("");
-
-            bool continueInput = true;
-
-            for (int i = 0; continueInput == true; i++)
-            {
-                PlayerListClass.ls.Add(new EntityClass());
-
-                Console.WriteLine("Please enter a player character name");
-                PlayerListClass.ls[i].Name = Console.ReadLine();
-
-                Console.WriteLine("Please enter that character's initiative score (minimum of 1, maximum of 5)");
-                PlayerListClass.ls[i].Initiative = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Do you wish to enter another opposing character?");
-                Console.WriteLine("1 = Yes | 2 = No");
-                int yesNo_continuePlayerCharacterInput = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("");
-
-                if (yesNo_continuePlayerCharacterInput == 2)
-                {
-                    continueInput = false;
-                }
-            }
-
-        }
-
-        public static void AddEnemySide()
-        {
-            Console.WriteLine("Will now enter the opposing non-player characters");
-            Console.WriteLine("");
-
-            bool continueInput = true;
-
-            for (int i = 0; continueInput == true; i++)
-            {
-                EnemyListClass.ls.Add(new EntityClass());
-
-                Console.WriteLine("Please enter an opposing character name");
-                EnemyListClass.ls[i].Name = Console.ReadLine();
-
-                Console.WriteLine("Please enter that character's initiative score (minimum of 1, maximum of 5)");
-                EnemyListClass.ls[i].Initiative = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Do you wish to enter another opposing character?");
-                Console.WriteLine("1 = Yes | 2 = No");
-                int yesNo_continuePlayerCharacterInput = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("");
-
-                if (yesNo_continuePlayerCharacterInput == 2)
-                {
-                    continueInput = false;
-                }
-            }
-
-        }
-
-    }
-
-    class MainScreenClass
-    {
-        public static void PrintPlayerSide()
-        {
-            Console.WriteLine("PLAYER SIDE:");
-            for (int i = 0; i < (PlayerListClass.ls.Count); i++)
-            {
-                Console.Write(PlayerListClass.ls[i].Name);
-                Console.WriteLine($" | Initiative: {PlayerListClass.ls[i].Initiative}");
-            }
-        }
-
-        public static void PrintEnemySide()
-        {
-            Console.WriteLine("OPPOSING SIDE:");
-            for (int i = 0; i < (EnemyListClass.ls.Count); i++)
-            {
-                Console.Write(EnemyListClass.ls[i].Name);
-                Console.WriteLine($" | Initiative: {EnemyListClass.ls[i].Initiative}");
-            }
         }
     }
 }
