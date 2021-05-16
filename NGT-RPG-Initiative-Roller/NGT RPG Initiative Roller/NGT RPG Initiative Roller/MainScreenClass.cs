@@ -30,6 +30,7 @@ namespace NGT_RPG_Initiative_Roller
         {
             Console.WriteLine("");
             Console.WriteLine("######################################################################");
+            Console.WriteLine("");
             MainScreenClass.PrintPlayerSide();
             Console.WriteLine("");
             MainScreenClass.PrintEnemySide();

@@ -13,7 +13,7 @@ namespace NGT_RPG_Initiative_Roller
             Console.WriteLine("###############################");
             Console.WriteLine("            2021");
             Console.WriteLine("");
-            Console.WriteLine("Do you want to create new sides table or would you prefer to import a csv?");
+            Console.WriteLine("Do you want to create a new sides table or would you prefer to import a csv?");
             Console.WriteLine("1 = Create new | 2 = Import");
 
             int newOrImport = Convert.ToInt32(Console.ReadLine());
@@ -23,6 +23,9 @@ namespace NGT_RPG_Initiative_Roller
             {
                 case 1:
                     EntityClass.AddPlayerSide();
+                    Console.WriteLine("");
+                    Console.WriteLine("########################################################");
+                    Console.WriteLine("");
                     EntityClass.AddEnemySide();
                     break;
 
@@ -32,8 +35,11 @@ namespace NGT_RPG_Initiative_Roller
                     break;
             }
 
-            //test
             MainScreenClass.PrintSides();
+
+            Console.WriteLine("");
+
+            InputActionPickerClass.Menu();
 
         }
     }
