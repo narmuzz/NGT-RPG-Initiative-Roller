@@ -28,11 +28,11 @@ namespace NGT_RPG_Initiative_Roller
                 Console.WriteLine("The OPPOSING side goes first");
                 Console.WriteLine("The following player can perform 1 action before the opposing side if they forego their normal turn:");
 
-                for (int i = 0; i < PlayerListClass.ls.Count; i++)
+                for (int i = 0; i < EntityClass.PlayerList.Count; i++)
                 {
-                    if (PlayerListClass.ls[i].PlayerWin == true)
+                    if (EntityClass.PlayerList[i].PlayerWin == true)
                     {
-                        Console.WriteLine(PlayerListClass.ls[i].Name);
+                        Console.WriteLine(EntityClass.PlayerList[i].Name);
                     }
                 }
             }
@@ -40,19 +40,19 @@ namespace NGT_RPG_Initiative_Roller
 
         private static int PlayerRoller()
         {
-            for (int i = 0; i < PlayerListClass.ls.Count; i++)
+            for (int i = 0; i < EntityClass.PlayerList.Count; i++)
             {
-                PlayerListClass.ls[i].PlayerWin = false;
-                if (DiceClass.Dice.Next(1, 7) <= PlayerListClass.ls[i].Initiative)
+                EntityClass.PlayerList[i].PlayerWin = false;
+                if (DiceClass.Dice.Next(1, 7) <= EntityClass.PlayerList[i].Initiative)
                 {
-                    PlayerListClass.ls[i].PlayerWin = true;
+                    EntityClass.PlayerList[i].PlayerWin = true;
                 }
             }
 
             int playerFailCount = 0;
-            for (int i = 0; i < PlayerListClass.ls.Count; i++)
+            for (int i = 0; i < EntityClass.PlayerList.Count; i++)
             {
-                if (PlayerListClass.ls[i].PlayerWin == false)
+                if (EntityClass.PlayerList[i].PlayerWin == false)
                 {
                     ++playerFailCount;
                 }
@@ -63,9 +63,9 @@ namespace NGT_RPG_Initiative_Roller
         private static int EnemyRoller()
         {
             int enemyFailCount = 0;
-            for (int i = 0; i < EnemyListClass.ls.Count; i++)
+            for (int i = 0; i < EntityClass.EnemyList.Count; i++)
             {
-                if (DiceClass.Dice.Next(1, 7) > EnemyListClass.ls[i].Initiative)
+                if (DiceClass.Dice.Next(1, 7) > EntityClass.EnemyList[i].Initiative)
                 {
                     ++enemyFailCount;
                 }
