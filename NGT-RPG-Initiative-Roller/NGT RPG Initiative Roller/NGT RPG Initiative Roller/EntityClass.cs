@@ -22,16 +22,17 @@ namespace NGT_RPG_Initiative_Roller
                 switch (temp)
                 {
                     case "0":
-                    continueInput = false;
-                    break;
+                        continueInput = false;
+                        break;
 
                     default:
-                    PlayerListClass.ls.Add(new EntityClass());
-                    PlayerListClass.ls[i].Name = temp;
-                    Console.WriteLine("Please enter that character's initiative score (minimum of 1, maximum of 5)");
-                    PlayerListClass.ls[i].Initiative = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("");
-                    break;
+                        PlayerListClass.ls.Add(new EntityClass());
+                        PlayerListClass.ls[i].Name = temp;
+                        Console.WriteLine("CURRENT INDEX IS: " + i);
+                        Console.WriteLine("Please enter that character's initiative score (minimum of 1, maximum of 5)");
+                        PlayerListClass.ls[i].Initiative = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("");
+                        break;
                 }
             }
         }
@@ -48,16 +49,16 @@ namespace NGT_RPG_Initiative_Roller
                 switch (temp)
                 {
                     case "0":
-                    continueInput = false;
-                    break;
+                        continueInput = false;
+                        break;
 
                     default:
-                    EnemyListClass.ls.Add(new EntityClass());
-                    EnemyListClass.ls[i].Name = temp;
-                    Console.WriteLine("Please enter that character's initiative score (minimum of 1, maximum of 5)");
-                    EnemyListClass.ls[i].Initiative = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("");
-                    break;
+                        EnemyListClass.ls.Add(new EntityClass());
+                        EnemyListClass.ls[i].Name = temp;
+                        Console.WriteLine("Please enter that character's initiative score (minimum of 1, maximum of 5)");
+                        EnemyListClass.ls[i].Initiative = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("");
+                        break;
                 }
             }
         }
