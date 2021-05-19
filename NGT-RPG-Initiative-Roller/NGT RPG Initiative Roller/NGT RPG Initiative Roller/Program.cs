@@ -47,7 +47,7 @@ namespace NGT_RPG_Initiative_Roller
       Console.WriteLine("");
     }
 
-    static void Menu()
+    static public void Menu()
     {
       Console.WriteLine("Please pick an option:");
       Console.WriteLine("1 = Roll for initiative | 2 = Mark someone as Out of Combat (OoC) | 3 = Add someone to either side | 4 = Export to CSV");

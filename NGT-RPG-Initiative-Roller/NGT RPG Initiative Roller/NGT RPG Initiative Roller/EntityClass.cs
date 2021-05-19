@@ -7,8 +7,8 @@ namespace NGT_RPG_Initiative_Roller
   class EntityClass
   {
     public bool PlayerWin { get; set; }
-    public static List<EntityClass> PlayerList = new List<EntityClass>();
-    public static List<EntityClass> EnemyList = new List<EntityClass>();
+    public static List<Entity> PlayerList = new List<Entity>();
+    public static List<Entity> EnemyList = new List<Entity>();
 
     public static void AddPlayerSide()
     {
@@ -57,7 +57,7 @@ namespace NGT_RPG_Initiative_Roller
             enemy.Name = temp;
             Console.WriteLine("Please enter that character's initiative score (minimum of 1, maximum of 5)");
             enemy.Initiative = Convert.ToInt32(Console.ReadLine());
-            EnemyListClass.EnemyList.Add(enemy);
+            EntityClass.EnemyList.Add(enemy);
             Console.WriteLine("");
             break;
         }
@@ -86,7 +86,7 @@ namespace NGT_RPG_Initiative_Roller
 
           Console.WriteLine("");
 
-          InputActionPickerClass.Menu();
+          Program.Menu();
           break;
       }
     }
@@ -138,7 +138,7 @@ namespace NGT_RPG_Initiative_Roller
 
           Console.WriteLine("");
 
-          InputActionPickerClass.Menu();
+          Program.Menu();
           break;
       }
     }

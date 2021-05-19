@@ -8,5 +8,7 @@ namespace NGT_RPG_Initiative_Roller
   {
     public string Name { get; set; }
     public int Initiative { get; set; }
+
+    public bool PlayerWin { get; set; }
   }
 }
