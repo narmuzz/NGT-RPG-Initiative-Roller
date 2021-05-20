@@ -29,11 +29,11 @@ namespace NGT_RPG_Initiative_Roller
       switch (newOrImport)
       {
         case 1:
-          EntityClass.AddPlayerSide();
+          EntityManager.AddPlayerSide();
           Console.WriteLine("");
           Console.WriteLine("########################################################");
           Console.WriteLine("");
-          EntityClass.AddEnemySide();
+          EntityManager.AddEnemySide();
           break;
 
         case 2:
@@ -64,11 +64,11 @@ namespace NGT_RPG_Initiative_Roller
           break;
 
         case 2:
-          EntityClass.Ooc();
+          EntityManager.Ooc();
           break;
 
         case 3:
-          EntityClass.AddAfterStart();
+          EntityManager.AddAfterStart();
           break;
 
         case 4:

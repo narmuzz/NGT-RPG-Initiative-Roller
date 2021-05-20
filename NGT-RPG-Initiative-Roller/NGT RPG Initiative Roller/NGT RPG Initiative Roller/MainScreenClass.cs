@@ -9,20 +9,20 @@ namespace NGT_RPG_Initiative_Roller
     public static void PrintPlayerSide()
     {
       Console.WriteLine("PLAYER SIDE:");
-      for (int i = 0; i < (EntityClass.PlayerList.Count); i++)
+      for (int i = 0; i < (EntityManager.PlayerList.Count); i++)
       {
-        Console.Write(EntityClass.PlayerList[i].Name);
-        Console.WriteLine($" | Initiative: {EntityClass.PlayerList[i].Initiative}");
+        Console.Write(EntityManager.PlayerList[i].Name);
+        Console.WriteLine($" | Initiative: {EntityManager.PlayerList[i].Initiative}");
       }
     }
 
     public static void PrintEnemySide()
     {
       Console.WriteLine("OPPOSING SIDE:");
-      for (int i = 0; i < (EntityClass.EnemyList.Count); i++)
+      for (int i = 0; i < (EntityManager.EnemyList.Count); i++)
       {
-        Console.Write(EntityClass.EnemyList[i].Name);
-        Console.WriteLine($" | Initiative: {EntityClass.EnemyList[i].Initiative}");
+        Console.Write(EntityManager.EnemyList[i].Name);
+        Console.WriteLine($" | Initiative: {EntityManager.EnemyList[i].Initiative}");
       }
     }
 

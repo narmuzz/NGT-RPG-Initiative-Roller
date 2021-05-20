@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NGT_RPG_Initiative_Roller
 {
-  class EntityClass
+  class EntityManager
   {
     public bool PlayerWin { get; set; }
     public static List<Entity> PlayerList = new List<Entity>();
@@ -30,7 +30,7 @@ namespace NGT_RPG_Initiative_Roller
             player.Name = temp;
             Console.WriteLine("Please enter that character's initiative score (minimum of 1, maximum of 5)");
             player.Initiative = Convert.ToInt32(Console.ReadLine());
-            EntityClass.PlayerList.Add(player);
+            EntityManager.PlayerList.Add(player);
             Console.WriteLine("");
             break;
         }
@@ -57,7 +57,7 @@ namespace NGT_RPG_Initiative_Roller
             enemy.Name = temp;
             Console.WriteLine("Please enter that character's initiative score (minimum of 1, maximum of 5)");
             enemy.Initiative = Convert.ToInt32(Console.ReadLine());
-            EntityClass.EnemyList.Add(enemy);
+            EntityManager.EnemyList.Add(enemy);
             Console.WriteLine("");
             break;
         }
@@ -72,13 +72,13 @@ namespace NGT_RPG_Initiative_Roller
       switch (actionPicker)
       {
         case 1:
-          EntityClass.AddPlayerSide();
-          EntityClass.AddAfterStart();
+          EntityManager.AddPlayerSide();
+          EntityManager.AddAfterStart();
           break;
 
         case 2:
-          EntityClass.AddEnemySide();
-          EntityClass.AddAfterStart();
+          EntityManager.AddEnemySide();
+          EntityManager.AddAfterStart();
           break;
 
         case 3:
@@ -103,34 +103,34 @@ namespace NGT_RPG_Initiative_Roller
       {
         case 1:
           Console.WriteLine("Enter the index number of the desired entity");
-          for (int i = 0; i < EntityClass.PlayerList.Count; i++)
+          for (int i = 0; i < EntityManager.PlayerList.Count; i++)
           {
-            Console.WriteLine(i + " " + EntityClass.PlayerList[i].Name);
+            Console.WriteLine(i + " " + EntityManager.PlayerList[i].Name);
           }
 
           int pickPlayer = Convert.ToInt32(Console.ReadLine());
           Console.WriteLine("");
 
-          Console.WriteLine($"{EntityClass.PlayerList[pickPlayer].Name} is now Out of Combat");
-          EntityClass.PlayerList.RemoveAt(pickPlayer);
+          Console.WriteLine($"{EntityManager.PlayerList[pickPlayer].Name} is now Out of Combat");
+          EntityManager.PlayerList.RemoveAt(pickPlayer);
 
-          EntityClass.Ooc();
+          EntityManager.Ooc();
           break;
 
         case 2:
           Console.WriteLine("Enter the index number of the desired entity");
-          for (int i = 0; i < EntityClass.EnemyList.Count; i++)
+          for (int i = 0; i < EntityManager.EnemyList.Count; i++)
           {
-            Console.WriteLine(i + " " + EntityClass.EnemyList[i].Name);
+            Console.WriteLine(i + " " + EntityManager.EnemyList[i].Name);
           }
 
           int pickEnemy = Convert.ToInt32(Console.ReadLine());
           Console.WriteLine("");
 
-          Console.WriteLine($"{EntityClass.EnemyList[pickEnemy].Name} is now Out of Combat");
-          EntityClass.EnemyList.RemoveAt(pickEnemy);
+          Console.WriteLine($"{EntityManager.EnemyList[pickEnemy].Name} is now Out of Combat");
+          EntityManager.EnemyList.RemoveAt(pickEnemy);
 
-          EntityClass.Ooc();
+          EntityManager.Ooc();
           break;
 
         case 3:
