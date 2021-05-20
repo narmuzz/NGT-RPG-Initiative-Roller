@@ -35,5 +35,34 @@ namespace NGT_RPG_Initiative_Roller
       Console.WriteLine("");
       MainScreenClass.PrintEnemySide();
     }
+
+    public static void AskOptionWithRetries(int min, int max)
+    {
+      bool succeeded = false;
+
+      while (!succeeded)
+      {
+        try
+        {
+          MainScreenClass.AskOption(min, max);
+          succeeded = true;
+        }
+        catch (FormatException ex)
+        {
+          Console.WriteLine("Option invalid: " + ex.Message);
+          Console.WriteLine("Please enter a valid option:");
+        }
+      }
+    }
+
+    public static void AskOption(int min, int max)
+    {
+      int selectedOption = Convert.ToInt32(Console.ReadLine());
+
+      if (selectedOption < min || selectedOption > max)
+      {
+        throw new FormatException("Option must be one of " + String.Join(", ", options));
+      }
+    }
   }
 }

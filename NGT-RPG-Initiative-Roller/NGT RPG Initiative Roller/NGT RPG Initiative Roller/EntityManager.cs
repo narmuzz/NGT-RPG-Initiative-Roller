@@ -29,7 +29,7 @@ namespace NGT_RPG_Initiative_Roller
             Entity player = new Entity();
             player.Name = temp;
             Console.WriteLine("Please enter that character's initiative score (minimum of 1, maximum of 5)");
-            player.Initiative = Convert.ToInt32(Console.ReadLine());
+            player.Initiative = MainScreenClass.AskOptionWithRetries(1, 5);
             EntityManager.PlayerList.Add(player);
             Console.WriteLine("");
             break;
@@ -56,7 +56,7 @@ namespace NGT_RPG_Initiative_Roller
             Entity enemy = new Entity();
             enemy.Name = temp;
             Console.WriteLine("Please enter that character's initiative score (minimum of 1, maximum of 5)");
-            enemy.Initiative = Convert.ToInt32(Console.ReadLine());
+            enemy.Initiative = MainScreenClass.AskOptionWithRetries(1, 5);
             EntityManager.EnemyList.Add(enemy);
             Console.WriteLine("");
             break;
@@ -68,7 +68,7 @@ namespace NGT_RPG_Initiative_Roller
     {
       Console.WriteLine("Please pick an option:");
       Console.WriteLine("1 = Add a player | 2 = Add an enemy | 3 = Go back to menu");
-      int actionPicker = Convert.ToInt32(Console.ReadLine());
+      int actionPicker = MainScreenClass.AskOptionWithRetries(1, 3);
       switch (actionPicker)
       {
         case 1:
@@ -96,7 +96,7 @@ namespace NGT_RPG_Initiative_Roller
       Console.WriteLine("Please pick an option:");
       Console.WriteLine("1 = Mark a player as OoC | 2 = Mark an enemy as OoC | 3 = Go back to menu");
 
-      int actionPicker = Convert.ToInt32(Console.ReadLine());
+      int actionPicker = MainScreenClass.AskOptionWithRetries(1, 3);
       Console.WriteLine("");
 
       switch (actionPicker)
@@ -108,7 +108,7 @@ namespace NGT_RPG_Initiative_Roller
             Console.WriteLine(i + " " + EntityManager.PlayerList[i].Name);
           }
 
-          int pickPlayer = Convert.ToInt32(Console.ReadLine());
+          int pickPlayer = MainScreenClass.AskOptionWithRetries(0, EntityManager.PlayerList.Count - 1);
           Console.WriteLine("");
 
           Console.WriteLine($"{EntityManager.PlayerList[pickPlayer].Name} is now Out of Combat");
@@ -124,7 +124,7 @@ namespace NGT_RPG_Initiative_Roller
             Console.WriteLine(i + " " + EntityManager.EnemyList[i].Name);
           }
 
-          int pickEnemy = Convert.ToInt32(Console.ReadLine());
+          int pickEnemy = MainScreenClass.AskOptionWithRetries(0, EntityManager.EnemyList.Count - 1);
           Console.WriteLine("");
 
           Console.WriteLine($"{EntityManager.EnemyList[pickEnemy].Name} is now Out of Combat");
